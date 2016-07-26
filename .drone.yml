@@ -1,18 +1,9 @@
-image: golang:1.5
-git:
-  path: github.com/dineshjava22/dineshasergo
-script:
-  - echo "build commands"
-  - .shipped/build
-  - .shipped/test
-clone:
-  path: github.com/dineshjava22/dineshasergo
 build:
   image: golang:1.5
   commands:
-    - echo "build commands"
-    - .shipped/build
-    - .shipped/test
+  - echo "build commands"
+  - .shipped/build
+  - .shipped/test
 publish:
   docker:
     file: ./Dockerfile
@@ -23,4 +14,3 @@ publish:
     repo: $$docker_repo
     email: $$docker_user_email
     tag: $$COMMIT
-    
